@@ -1,0 +1,13 @@
+services:
+  broker:
+    build: .
+    environment:
+      STREAMFORGE_PARTITIONS: 4
+    ports:
+      - "8080:8080"
+    volumes:
+      - streamforge-data:/home/streamforge/data
+    security_opt:
+      - no-new-privileges:true
+volumes:
+  streamforge-data:
