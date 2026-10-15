@@ -1,4 +1,4 @@
 # streamforge
-An educational, production-engineered append-only event log in Rust. The MVP persists ordered, checksummed records and detects truncation or corruption during recovery. It does **not** claim Kafka protocol compatibility.
+An educational, production-engineered append-only event log in Rust. The storage core persists ordered, checksummed records; detects truncation and corruption during recovery; enforces bounded record sizes; reads bounded batches; routes keys deterministically across partitions; and tracks monotonic, consumer-group-isolated offsets. It does **not** claim Kafka protocol compatibility.
 
-Run `cargo test`. Next milestones cover partitions, retention, consumer offsets, backpressure, leader leases, failure tests, HTTP/gRPC APIs, and the operations console.
+Run `cargo test`. Next milestones add segmented retention, concurrent writers, leader leases, HTTP/gRPC APIs, fault-injection tests, and an operations console.
